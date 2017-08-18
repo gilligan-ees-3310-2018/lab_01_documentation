@@ -1,0 +1,98 @@
+---
+title: "Test Lab Assignment"
+author: "Jonathan Gilligan"
+date: "August 17, 2017"
+output: 
+  html_document: 
+    keep_md: yes
+    self_contained: yes
+---
+
+```{r setup, include=FALSE}
+knitr::knit_hooks$set(inline = function(x) { knitr:::format_sci(x, 'md')})
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(stringr)
+
+format_md = function(x, digits = NULL, scientific = NULL, comma = FALSE) {
+  if (is.null(scientific)) {
+    fixed = formatC(x, digits = digits, format = 'fg', flag = '#')
+    sci = formatC(x, digits = digits, format = 'e')
+    format = ifelse(str_length(fixed) > getOption('scipen') + str_length(sci), 'e', 'fg')
+  }
+  else {
+    format = ifelse(scientific, 'e', 'fg')
+  }
+  mark = ifelse(comma, ',', '')
+  
+  formatC(x, digits = digits, format = format, 
+          flag = '#',
+          big.mark = mark) %>%
+    str_replace_all(c('\\+' = '', '[Ee](-?)0*([1-9][0-9]*)$' = '&times;10^\\1\\2^'))
+}
+
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure}
+ggplot(pressure, aes(x = temperature, y = pressure)) + geom_point() + geom_line()
+```
+
+## Using R for calculations
+
+We can use R to do our calculations. Consider exercise 1 in Chapter 2 of our textbook, _Global Warming: Understanding the Forecast_:
+
+> A joule (J) is an amount of energy, and a watt (W) is a rate of using energy, defined as 1 W = 1 J/s. How many Joules of energy are required to run a 100-W light bulb for one day?
+
+```{r ex_1_1_a}
+seconds_per_hour = 60 * 60 # number of seconds in one hour
+hours_per_day = 24 # number of seconds in one day
+light_bulb_power = 100
+joules_per_day = light_bulb_power * seconds_per_hour * hours_per_day
+
+joules_per_day
+```
+
+It can be hard to read a long number like that, so we can use R's format command to add commas:
+
+```{r formatting_example}
+format_md(joules_per_day, comma = TRUE)
+```
+
+A `r light_bulb_power` watt light bulb burns `r light_bulb_power` Joules per second, 
+so the light bulb burns `r light_bulb_power * seconds_per_hour` Joules per hour and
+`r joules_per_day` Joules per day.
+
+> Burning coal yields about 30 &times; 10^6^ J of energy per kilogram of coal burned. Assuming that the coal power plant is 30% efficient,
+> how much coal has to be burned to light that light bulb for one day?
+
+```{r ex_1_1_b}
+joules_heat_per_kg_coal = 30.E+6
+efficiency = 0.30
+joules_electricity_per_kg_coal = joules_heat_per_kg_coal * efficiency
+kg_coal_per_joule_electricity = 1 / joules_electricity_per_kg_coal
+kg_coal_per_day = joules_per_day * kg_coal_per_joule_electricity
+
+kg_coal_per_day
+```
+
+1 kilogram of coal produces `r format_md(joules_heat_per_kg_coal, digits = 1)` joules of heat, which is converted into `r format_md(joules_electricity_per_kg_coal, digits = 1)` joules of electricity.
+We can turn this around and figure that to get 1 joule of electricity takes 1 / (`r format_md(joules_electricity_per_kg_coal, digits = 1)`) = `r format_md(kg_coal_per_joule_electricity, digits = 1)` kg of coal,
+so to get `r format_md(joules_per_day, digits = 1)` joules of electricity to power the light bulb for one day takes `r format_md(kg_coal_per_day, digits = 2)` kg of coal.
+
+
+
