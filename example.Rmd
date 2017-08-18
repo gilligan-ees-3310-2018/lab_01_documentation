@@ -2,8 +2,8 @@
 title: "Test Lab Assignment"
 author: "Jonathan Gilligan"
 date: "August 17, 2017"
-output: 
-  html_document: 
+output:
+  html_document:
     keep_md: yes
     self_contained: yes
 ---
@@ -93,6 +93,3 @@ kg_coal_per_day
 1 kilogram of coal produces `r format_md(joules_heat_per_kg_coal, digits = 1)` joules of heat, which is converted into `r format_md(joules_electricity_per_kg_coal, digits = 1)` joules of electricity.
 We can turn this around and figure that to get 1 joule of electricity takes 1 / (`r format_md(joules_electricity_per_kg_coal, digits = 1)`) = `r format_md(kg_coal_per_joule_electricity, digits = 1)` kg of coal,
 so to get `r format_md(joules_per_day, digits = 1)` joules of electricity to power the light bulb for one day takes `r format_md(kg_coal_per_day, digits = 2)` kg of coal.
-
-
-
