@@ -3,9 +3,9 @@ title: "Introduction to RMarkdown"
 author: "Jonathan Gilligan"
 date: "August 17, 2017"
 output:
-  html_document:
-    keep_md: yes
-    self_contained: yes
+  github_document: default
+  html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -44,6 +44,54 @@ research reproducible. The RMarkdown file contains all the instructions to
 load the data, analyze it, and generate the final report. Then if your
 data changes and you need to update your report, you can do so by knitting the
 RMarkdown document with the updated data files.
+
+To turn an RMarkdown document into an HTML, PDF, or Microsoft Word document, you just click on the "Knit" button in RStudio. If you click on the word "Knit" on the button, RStudio will turn the RMarkdown 
+document into the default format (see below). To knit the document into a different output format,
+click on the arrow just to the right of the word "Knit," and select the output format you want.
+
+# Document header
+
+At the top of an RMarkdown document there is a section set off by lines of three
+hyphens above it and below it.
+
+Here is an example:
+
+```
+---
+title: "Your document's title"
+subtitle: "Your document's subtitle"
+author: "Your name goes here"
+date: "Aug 28, 2017"
+output:
+    pdf_document: default
+    html_document: default
+---
+```
+
+By default, when RStudio knits the document, it converts it into the format listed
+first under `output_format`
+
+When the output format lists, for instance, "`pdf_format: default`", that means
+that when RStudio creates a pdf document, it uses the default options. 
+If you want to customize the output, you can specify
+options for RStudio to use in creating PDF, HTML, or Word output documents:
+
+```
+---
+title: "Your document's title"
+subtitle: "Your document's subtitle"
+author: "Your name goes here"
+date: "Aug 28, 2017"
+output:
+    pdf_document:
+      toc: "true" 
+      number_sections: "false"
+    html_document:
+      self_contained: "false"
+---
+```
+
+
 
 # Markdown 
 
