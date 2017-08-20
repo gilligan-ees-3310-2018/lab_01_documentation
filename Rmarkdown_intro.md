@@ -293,7 +293,7 @@ ggplot(pressure, aes(x = temperature, y = pressure)) +
   geom_point() +
   labs(x = "Temperature", y = "Pressure")
 ```</code></pre>
-![This is a plot of pressure versus temperature.](intro_Rmarkdown_files/figure-markdown_github-ascii_identifiers/graph_example-1.png)
+![This is a plot of pressure versus temperature.](RMarkdown_intro_files/figure-markdown_github-ascii_identifiers/graph_example-1.png)
 
 Loading R Scripts
 -----------------
@@ -327,4 +327,4 @@ The other script allows you to produce a layer diagram, similar to the ones in C
 make_layer_diagram(2)
 ```
 
-![](intro_Rmarkdown_files/figure-markdown_github-ascii_identifiers/example_layer_diagram-1.png)
+![](RMarkdown_intro_files/figure-markdown_github-ascii_identifiers/example_layer_diagram-1.png)

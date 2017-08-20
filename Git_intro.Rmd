@@ -3,8 +3,8 @@ title: "Introduction to Git and Github Classroom"
 author: "Jonathan GIlligan"
 date: "August 19, 2017"
 output:
-  github_document: default
   pdf_document: default
+  github_document: default
   html_document: default
 ---
 # Revision Control for Reproducible Research
