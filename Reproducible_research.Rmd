@@ -3,8 +3,8 @@ title: "Introduction to Reproducible Research"
 author: "Jonathan GIlligan"
 date: "August 19, 2017"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
   github_document: default
 ---
 # Why Do We Need Reproducible Research?

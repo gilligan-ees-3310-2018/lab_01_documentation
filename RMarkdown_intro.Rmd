@@ -3,9 +3,9 @@ title: "Introduction to RMarkdown"
 author: "Jonathan Gilligan"
 date: "August 17, 2017"
 output:
+  html_document: default
   pdf_document: default
   github_document: default
-  html_document: default
 ---
 
 ```{r setup, include=FALSE}
