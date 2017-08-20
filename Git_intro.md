@@ -167,8 +167,7 @@ If you have conflicts, you will need to edit the files to resolve the conflicts 
 Github and Github Classroom
 ===========================
 
-Github is a web site devoted to sharing open-source git repositories and allowing paying customers to operate private git repositories.
-As a student, you can get a free educational account that allows you an unlimited number of public repositories for your projects and a limited number of private repositories.
+Github is a web site devoted to sharing open-source git repositories and allowing paying customers to operate private git repositories. You can get a free account at <https://github.com> and as a student, you can get some free extra features if you request a student account at <https://education.github.com/discount_requests/new>.
 
 Github classroom is an add-on service that github offers for teachers, which allows teachers to post assignments on github and then invite students to clone the assignment and then turn in the completed assignment via a private repository.
 
