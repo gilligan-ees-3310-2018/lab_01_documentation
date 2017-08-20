@@ -42,12 +42,12 @@ When the output format lists, for instance, "`pdf_format: default`", that means 
     subtitle: "Your document's subtitle"
     author: "Your name goes here"
     date: "Aug 28, 2017"
-    output_format:
+    output:
         pdf_document:
           toc: "true" 
           number_sections: "false"
         html_document:
-          self_contained: "true"
+          self_contained: "false"
     ---
 
 Markdown
@@ -121,11 +121,17 @@ You can make bulleted or numbered lists easily in Markdown. Simply begin a line 
 
         * This is another item in the sub-list
         
-            A list item can have several paragraphs. Just ident the continuation by four additional spaces and do not begin it with an asterisk.
-            
+            A list item can have several paragraphs. Just ident the continuation 
+            by four additional spaces and do not begin it with an asterisk.
+            If you have multiple lines with no blank line separating them,
+            Markdown treats them as a single paragraph.
+
             Here is a third paragraph of continuation.
 
     * This is the main list again.
+      Just as with other things, you can break a single list item into several lines,
+      and as long as there is no blank line between them, Markdown knows to treat
+      them as a single paragraph.
 
 -   This is a list
 
@@ -135,11 +141,11 @@ You can make bulleted or numbered lists easily in Markdown. Simply begin a line 
 
     -   This is another item in the sub-list
 
-        A list item can have several paragraphs. Just ident the continuation by four additional spaces and do not begin it with an asterisk.
+        A list item can have several paragraphs. Just ident the continuation by four additional spaces and do not begin it with an asterisk. If you have multiple lines with no blank line separating them, Markdown treats them as a single paragraph.
 
         Here is a third paragraph of continuation.
 
--   This is the main list again.
+-   This is the main list again. Just as with other things, you can break a single list item into several lines, and as long as there is no blank line between them, Markdown knows to treat them as a single paragraph.
 
 To make numbered lists, start them with a number and a period:
 
@@ -153,7 +159,7 @@ To make numbered lists, start them with a number and a period:
 
         a) This is another item in the sub-list
         
-            A list item can have several paragraphs. Just ident the continuation by four additional spaces and do not begin it with an asterisk.
+            A list item can have several paragraphs.
             
             Here is a third paragraph of continuation.
             
@@ -173,7 +179,7 @@ To make numbered lists, start them with a number and a period:
 
     2.  This is another item in the sub-list
 
-        A list item can have several paragraphs. Just ident the continuation by four additional spaces and do not begin it with an asterisk.
+        A list item can have several paragraphs.
 
         Here is a third paragraph of continuation.
 
@@ -188,23 +194,30 @@ To make numbered lists, start them with a number and a period:
 Mathematical expressions
 ------------------------
 
-For simple math, you can just type stuff in RMarkdon: `1 + 2 * 3` comes out as 1 + 2 \* 3. If you want subscripts or superscripts, you can get those by using the `~` and `^` characters, respectively: `I~out~ = sigma T^4^` appears as I<sub>out</sub> = sigma T<sup>4</sup>.
+For simple math, you can just type stuff in RMarkdown: `1 + 2 * 3` comes out as 1 + 2 \* 3. If you want subscripts or superscripts, you can get those by using the `~` and `^` characters, respectively: `I~out~ = sigma T^4^` appears as I<sub>out</sub> = sigma T<sup>4</sup>.
 
-If you want fancier formatting for mathematical expressions, RMarkdown has a way to do this. However, it is complicated and I will **not** expect you to learn it for this class.
+If you want fancier formatting for mathematical expressions, RMarkdown has a way to do this.
 
 If you put an expression between dollar signs, RMarkdown interprets it differently from regular RMarkdown, and uses a format called LaTeX that is used for typesetting sophisticated mathematics. I won't try to present all of LaTeX here, but will give some common examples:
 
-An expression between single dollar signs is interpreted as *in-line* math that appears in the middle of a line of text. LaTeX uses special terms that begin with a backslash `\` to indicate special mathematical formatting or operators. For example `$a \times x + b$` appears as *a* × *x* + *b*.
+An expression between single dollar signs is interpreted as *in-line* math that appears in the middle of a line of text. LaTeX uses special terms that begin with a backslash `\` to indicate special mathematical formatting or operators. For example `$a + b \times x$` appears as *a* + *b* × *x*.
 
-LaTeX handles subscripts and superscripts differently from RMarkdown: You use `_{}` and `^{}` with whatever you want to appear in the subscript or superscript inside the curly braces `{}`: `$I_{out} = \sigma T^{4{$` appears as *I*<sub>*o**u**t*</sub> = *σ**T*<sup>4</sup>
+You can show Greek letters, like *α*, *π*, and *σ* by spelling them out like this: `$\alpha$`, `$\pi$`, and `$\sigma$`. The epsilon that we use to indicate emissivity is a variation on the ordinary Greek epsilon, so we spell it `$\varepsilon$` to get *ε*.
+
+LaTeX handles subscripts and superscripts differently from RMarkdown: You use `_{}` and `^{}` with whatever you want to appear in the subscript or superscript inside the braces `{}`: `$I_{out} = \sigma T^{4{$` appears as *I*<sub>*o**u**t*</sub> = *σ**T*<sup>4</sup>
 
 You can include square root signs using `\sqrt`: `$x = \sqrt{y \times z}$` appears as $x = \\sqrt{y \\times z}$. You can do other roots like this: `$T = \sqrt[4]{I_{out} / \sigma}$` appears as $T = \\sqrt\[4\]{I\_{out} / \\sigma}$.
 
-To get display math, which appears on its own line, you use double dollar signs. This is useful when you want to write a mathematical expression that is much taller than a line of text: `$$\varepsilon \sigma T^4 = \frac{(1 - \alpha)}{4} \times I_{solar}$$` appears as
+To get display math, which appears on its own line, you use double dollar signs. This is useful when you want to write a mathematical expression that is much taller than a line of text. In display mode you can display fractions using `\frac{numerator expression}{denominator expression}`, as in this example: `$$\varepsilon \sigma T^4 = \frac{(1 - \alpha)}{4} \times I_{solar}$$` appears as
 
 $$ \\varepsilon \\sigma T^4 = \\frac{(1 - \\alpha)}{4} \\times I\_{solar}$$
+ `$$T_{bare rock} = \sqrt[4]{\frac{(1 - \alpha)}{4 \varepsilon \sigma} \times I_{solar}}$$` appears as
 
-If this seems too painfully complicated, don't worry. I do not expect you to learn this mathematical notation and it will not be required for this course. I only mention it in case you are interested.
+$$T\_{bare rock} = \\sqrt\[4\]{\\frac{(1 - \\alpha)}{4 \\varepsilon \\sigma} \\times I\_{solar}}$$
+
+There is a lot more to the LaTeX notation that you can use in RMarkdown, but what I have shown here is sufficient for everything you will do in this class. You won't need to use this kind of mathematical notation very much, but it can be convenient, especially when you are working exercises on atmospheric layer models.
+
+If you find it too difficult to use LaTeX mathematical notation, I will accept either hand-written supplements in which you write out the equations by hand, or a textual description in your document where you use words instead of mathematical symbols to explain what you are doing.
 
 Figures
 -------
@@ -214,6 +227,19 @@ You can include image files in your RMarkdown document:
     ![This is a tornado](images/tornado.jpg)
 
 ![This is a tornado](images/tornado.jpg)
+
+Hyperlinks
+----------
+
+You can include links to documents on the web in two ways. The simplest is if you want the URL for the link to appear in your document you can just surround the url with angle brackets: `<https://www.vanderbilt.edu>` appears as <https://www.vanderbilt.edu>.
+
+If you want to add a hyperlink to some text in your document, then you would do it like this:
+
+    [Vanderbilt University](https://www.vanderbilt.edu)
+
+to get: [Vanderbilt University](https://www.vanderbilt.edu).
+
+Note the difference between the hyperlink specification and the image specification is whether there is an exclamation point before the square brackets.
 
 Using R for calculations
 ========================
