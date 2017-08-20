@@ -33,3 +33,14 @@ vignettes/*.pdf
 *.utf8.md
 *.knit.md
 .Rproj.user
+
+# TeX auxiliary files
+*.aux
+*.bak
+*.blg
+*.lof
+*.log
+*.log
+*.out
+*.toc
+*.synctex.gz
