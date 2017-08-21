@@ -1,26 +1,48 @@
 Introduction to Reproducible Research
 ================
-Jonathan GIlligan
+Jonathan Gilligan
 August 19, 2017
 
 Why Do We Need Reproducible Research?
 =====================================
 
-In the spring of 2012, Bruno Iksil, a securities trader at the investment bank JPMorgan, Chase, & Company who was also known by the nickname "The London Whale" for his aggressive trades, made a series of costly mistakes that cost JPM-Chase $6.2 billion. Iksil was attempting to manage the financial risk of a portfolio of investments. However, an analyst on Iksil's team had calculated the volatility (a measure of financial riskiness) of his portfolio using an Excel spreadsheet and made a subtle error in a mathematical formula, dividing by the sum of two numbers instead of the average. That error caused Iksill to underestimate risk by a factor of 2, and thus to expose JPM-Chase to far more risk than he realized with his enormous trades.
+In the spring of 2012, Bruno Iksil, a securities trader at the investment bank JPMorgan, Chase, & Company who was also known by the nickname "The London Whale" for his aggressive trades, made a series of costly mistakes that cost JPM-Chase $6.2 billion. (Hurtado 2015) Iksil was attempting to manage the financial risk of a portfolio of investments. However, an analyst on Iksil's team had calculated the volatility (a measure of financial riskiness) of his portfolio using an Excel spreadsheet and made a subtle error in a mathematical formula, dividing by the sum of two numbers instead of the average. That error caused Iksill to underestimate risk by a factor of 2, and thus to expose JPM-Chase to far more risk than he realized with his enormous trades. (Kwak 2013)
 
-Two years earlier, Carmen Reinhart and Kenneth Rogoff, two highly respected academic economists published an influential research paper on the effect of government debt on economic growth. This paper concluded that when government debt exceeds 90% of GDP, the country's economic growth is likely to abruptly come to a halt, and even slide into recession. This paper was used to justify harsh austerity measures throughout Europe, where nations were struggling to recover from the 2008 global economic meltdown, and was cited by Paul Ryan as highlighting the importance of dramatically cutting federal spending in the U.S.
+Two years earlier, Carmen Reinhart and Kenneth Rogoff, two highly respected academic economists published an influential research paper on the effect of government debt on economic growth. (Reinhart and Rogoff 2010) This paper concluded that when government debt exceeds 90% of GDP, the country's economic growth is likely to abruptly come to a halt, and even slide into recession. This paper was used to justify harsh austerity measures throughout Europe, where nations were struggling to recover from the 2008 global economic meltdown, and was cited by Paul Ryan as justification for his proposals to dramatically cut federal spending in the U.S.
 
-Thomas Herndon, a graduate student in economics at the University of Massachusetts, was skeptical about this research, but Reinhart and Rogoff's paper did not explain all the details of their data and analysis. Finally, in 2013, Reinhart and Rogoff gave Herndon copies of the spreadsheets they had used in their analysis. Herndon found three glaring errors in the spreadsheet, and after he fixed the errors, there was no sudden slowdown of economic growth.
+Thomas Herndon, a graduate student in economics at the University of Massachusetts, was skeptical about this research, but Reinhart and Rogoff's paper did not explain all the details of their data and analysis. Finally, in 2013, Reinhart and Rogoff gave Herndon copies of the spreadsheets they had used in their analysis. Herndon found three glaring errors in the spreadsheet, and after he fixed the errors, there was no sudden slowdown of economic growth. (Krudy 2013; Bailey and Borwein 2013; Kwak 2013)
 
-Such errors are not unique to economic research. In the past two years, errors in spreadsheet formulas led to the retraction of papers in prominent journals of environmental science, medicine, and biology.
+Such errors are not unique to economic research. In the past two years, errors in spreadsheet formulas led to the retraction of papers in prominent journals of environmental science, medicine, and biology. (Stern 2017; Palus 2016; Ferguson 2015)
+
+In 2015, a major study of air pollution associated with "fracking" in natural gas wells was retracted when the authors discovered a major error in an Excel spreadsheet that they used for data analysis. (Chawla 2016)
 
 Spreadsheets are not the only source of major errors in scientific publications. Poor statistical practices have led to what has come to be called a "crisis of replication" in psychology and medicine and concern that many published scientific results are incorrect.
 
 Of particular concern is the fact that major problems are being discovered in clinical medical research. Once recent review of 5,000 papers in eight top medical journals found that almost 100 had major inaccuracies.
 
+Scientific Errors in Climate Science
+------------------------------------
+
+Scientific errors have had significant impact in climate science In the 1990s, John Christy and Roy Spencer, a pair of prominent climate scientists at the University of Alabama at Huntsville (UAH), were analyzing satellite measurements of microwave emissions from the earth's atmosphere and using them to calculate the temperature of different layers of the atmosphere. They reported the surprising result that whereas measurements of temperatures at the earth's surface, made with thermometers at meteorological monitoring stations, consistently showed a large warming trend, the satellite measurements found that the lower troposphere was cooling off. Christy and Spencer claimed that their satellite measurements were more accurate than the thermometer measurements taken at the surface and challenged scientific findings that global warming was taking place. Controversy about the disagreement between the satellite measurements and the surface measurements raged for years, and was the subject of a book-length report from the National Academy of Sciences. (National Research Council 2000)
+
+A rival team of scientists at the company Remote Sensing Systems (RSS) looked into the matter and conducted its own analysis of the satellite temperature records. Christy and Spencer would not release the computer code they used to analyze the satellite record to the public, so other scientists could not check it for errors. However, the independent analysis by scientists at RSS revealed a number of serious errors in the UAH analysis, including a place where the UAH team mistakenly added two numbers instead of subtracting one from the other (an easy mistake to make in programming, and one that might have been caught years earlier if the code had been available for public inspection). (Wentz and Schabel 1998; Mears and Wentz 2005; Christy et al. 2007) In the end, the UAH team released corrections to their satellite temperature measurements, and the corrected record agreed well with other measurements, including those by thermometers at the surface and weather balloons. The years of controversy over whether the lower troposphere was cooling turned out to be mostly the result of computer programming errors.
+
+### The Move toward Open Climate Science
+
+In 2009, a leak of thousands of emails by a number of climate scientists led to a scandal known as "Climategate," in which prominent climate scientists were accused of doctoring their data and analysis. Investigations conclusively cleared them of any misdeeds, and it turned out that the things they were accused of doing in secret had in fact been clearly reported in published papers years before the scandal. However, the damage to the reputation of the scientists and the public's trust in climate science taught the climate science community the importance of being completely open with data, methods, and computer code.
+
+Since then, climate scientists have moved significantly toward adopting principles of openness. Today, pretty much all major climate data sets are available for free on the internet. Computer code used for important analysis, including the source code to many of the major global climate models, is publicly available (although much of it is not much use unless you have a supercomputer to run it on).
+
+Making all the data and code available helps win trust by convincing the public that climate scientists do not have anything to hide. It also facilitates faster scientific progress by allowing scientists more easily to build on one another's work, and it makes it easier to find and correct errors. A good list of major sources of climate data and computer code is available at <http://www.realclimate.org/index.php/data-sources/>. The R Open Science Project (<https://ropensci.org/>) maintains a number of sophisticated open-source scientific projects that cover many fields, such as biology and climate science. A retired engineer and amateur climate scientist, D. Kelly O'Day, maintains a blog (<https://rclimate.wordpress.com/>) where he shares R scripts to download, analyze, and graph climate data.
+
+The Big Picture
+---------------
+
 For the most part, science works. Advances in all fields of science have led to deep understanding of nature, and have led to technological breakthroughs that drive our economy, enable us to live much longer and healthier lives, and otherwise improve the quality of our lives.
 
 Nonetheless, even if only a few percent of major scientific research papers are wrong, this has potential to mislead us about which medicines or medical procedures are safe and which are dangerous, about which government policies are likely to be effective, and in the private sector, can lead companies to make financially disastrous mistakes.
+
+### Reproducible Research
 
 Two important principles in sceince, which should prevent these errors, are that research should be *transparent* and *reproducible*: Research reports should describe the procedures clearly and in enough detail that other scientists know exactly what was done. And scientists who repeat the research procedures, as described in the reports, should find similar results, within the limits of experimental uncertainty.
 
@@ -29,6 +51,10 @@ However, as the anecdotes above, and hundreds of similar reports of problems in 
 To address these problems, the scientific commuinity is increasingly embracing the principles of what has come to be called **reproducible research**.
 
 Federal funding agencies, scientific journals, and scientific societies now call for authors to reveal all the details of their experiments and analysis, and must share the data and computer codes they used to perform the analyses described in their publications.
+
+Whether you are doing research in basic science, such as quantum physics, conducting clinical trials to assess the effectiveness and safety of new drugs and medical procedures, investigating climate change, analyzing economic policy, or working for a private company to study financial risks and opportunities, it will be important for you to be able to do your research accurately, to communicate the details clearly with your co-workers and your bosses, and to be able to return to your old research reports and vouch for all the details of what you did.
+
+Whether you find yourself working in pure academic research, in public policy, or for private industry, the tools of reproducible research will help you do these things effectively.
 
 What is Reproducible Research?
 ==============================
@@ -155,3 +181,32 @@ If you are interested in learning more about reproducible research, I would reco
 -   Christopher Gandrud, *Reproducible Research with R and RStudio* (Second Edition) (CRC Press/Chapman & Hall, 2015). Gandrud is an economist and political scientist, who pioneered a lot of the methods that I use for reproducible research as part of his Ph.D. dissertation. This book is a comprehensive how-to guide to reproducible research, and all of the files necessary to reproduce the book are available online at <https://github.com/christophergandrud/Rep-Res-Book>
 
 -   The R Open Science Project, *Reproducibility in Science: A Guide to Enhancing Reproducibility in Scientific Results and Writing* <http://ropensci.github.io/reproducibility-guide/>
+
+References
+==========
+
+Bailey, David H., and Jonathan Borwein. 2013. “The Reinhart-Rogoff Error—or How Not to Excel at Economics. the Conversation.” *The Conversation*, April. <http://theconversation.com/the-reinhart-rogoff-error-or-how-not-to-excel-at-economics-13646>.
+
+Chawla, Dalmeet Singh. 2016. “Authors Retract Study That Found Pollution Near Fracking Sites. Retraction Watch.” July 8. <http://retractionwatch.com/2016/07/08/authors-retract-study-that-found-pollution-near-fracking-sites/>.
+
+Christy, John R., William B. Norris, Roy W. Spencer, and Justin J. Hnilo. 2007. “Tropospheric Temperature Change Since 1979 from Tropical Radiosonde and Satellite Measurements.” *Journal of Geophysical Research: Atmospheres* 112 (D6): D06102. doi:[10.1029/2005JD006881](https://doi.org/10.1029/2005JD006881).
+
+Ferguson, Cat. 2015. “Teflon Toxicity Paper Fails to Stick. Retraction Watch.” April 16. <http://retractionwatch.com/2015/04/16/teflon-toxicity-paper-fails-to-stick/>.
+
+Hurtado, Patricia. 2015. “The London Whale.” *Bloomberg View*, April. <https://www.bloomberg.com/view/quicktake/the-london-whale>.
+
+Krudy, Edward. 2013. “How a Student Took on Eminent Economists on Debt Issue—and Won.” *Reuters*, April. <https://www.reuters.com/article/us-global-economy-debt-herndon-idUSBRE93H0CV20130418>.
+
+Kwak, James. 2013. “The Importance of Excel. the Baseline Scenario.” February 9. <https://baselinescenario.com/2013/02/09/the-importance-of-excel/>.
+
+Mears, Carl A., and Frank J. Wentz. 2005. “The Effect of Diurnal Correction on Satellite-Derived Lower Tropospheric Temperature.” *Science* 309 (5740): 1548–51. doi:[10.1126/science.1114772](https://doi.org/10.1126/science.1114772).
+
+National Research Council. 2000. *Reconciling Observations of Global Temperature Change*. <https://www.nap.edu/catalog/9755/reconciling-observations-of-global-temperature-change>.
+
+Palus, Shannon. 2016. “Doing the Right Thing: Authors Share Data, Retract When Colleague Finds Error. Retraction Watch.” May 17. <http://retractionwatch.com/2016/05/17/doing-the-right-thing-authors-share-data-retract-when-colleague-finds-error/>.
+
+Reinhart, Carmen M., and Kenneth S. Rogoff. 2010. “Growth in a Time of Debt.” *American Economic Review* 100 (2): 573–78. doi:[10.1257/aer.100.2.573](https://doi.org/10.1257/aer.100.2.573).
+
+Stern, Victoria. 2017. “Think of the Unthinkable: JAMA Retraction Prompts Author to Urge Others to Share Data. Retraction Watch.” April 19. <http://retractionwatch.com/2017/04/19/think-unthinkable-jama-retraction-prompts-author-urge-others-share-data/>.
+
+Wentz, Frank J., and Matthias Schabel. 1998. “Effects of Orbital Decay on Satellite-Derived Lower-Tropospheric Temperature Trends.” *Nature* 394 (6694): 661–64. doi:[10.1038/29267](https://doi.org/10.1038/29267).

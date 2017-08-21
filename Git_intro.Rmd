@@ -2,6 +2,8 @@
 title: "Introduction to Git and Github Classroom"
 author: "Jonathan GIlligan"
 date: "August 19, 2017"
+fontfamily: "newtxtext,newtxmath"
+fontsize: "12pt"
 output:
   html_document: default
   pdf_document: default

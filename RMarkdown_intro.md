@@ -60,6 +60,8 @@ Paragraphs
 
 Any block of one or more lines of text, with a blank line before and a blank line after is treated as a single paragraph. To separate paragraphs, put a blank line between them:
 
+### Markdown:
+
     This is one paragraph.
     It stretches over several consecutive lines,
     but it will be formatted 
@@ -70,6 +72,8 @@ Any block of one or more lines of text, with a blank line before and a blank lin
     blocks of text tells Markdown
     that they are separate paragraphs
 
+### Formatted Output:
+
 > This is one paragraph. It stretches over several consecutive lines, but it will be formatted as a single paragraph.
 >
 > This is another paragraph. The blank line between the two blocks of text tells Markdown that they are separate paragraphs
@@ -79,6 +83,8 @@ Section headers
 
 Any line of text that begins with one or more hash symbols ("\#") and is preceded by a blank line is treated as a section header. Top-level section headers have a single hash, and subsections, subsubsections, etc. use two, three, etc. hashes.
 
+### Markdown:
+
     # This is a top-level section header
 
     ## This is a subsection
@@ -86,6 +92,8 @@ Any line of text that begins with one or more hash symbols ("\#") and is precede
     ### This is a subsubsection
 
     # This is another section
+
+### Formatted Output:
 
 > This is a top-level section header
 > ==================================
@@ -103,15 +111,22 @@ Formatting text
 
 To make *italic text* and **boldface text** you surround the text with underscores or asterisks. A single underscore or asterisk means italic, two means boldface, and three means both italic and boldface:
 
-    This is _italic text_. This is *also italic text*. __This is boldface__ and **so is this**.
-    ***This is bold italic***. This is ~~strikethrough~~, perhaps to indicate an error.
+### Markdown:
 
-> This is *italic text*. This is *also italic*. **This is boldface** and **so is this**. ***This is bold italic***. This is ~~strikethrough,~~ perhaps to indicate an error.
+    This is _italic text_. This is *also italic text*. __This is boldface__ and 
+    **so is this**. ***This is bold italic***. This is ~~strikethrough~~, perhaps 
+    to indicate an error.
+
+### Formatted Output:
+
+> This is *italic text*. This is *also italic text*. **This is boldface** and **so is this**. ***This is bold italic***. This is ~~strikethrough~~, perhaps to indicate an error.
 
 Lists
 -----
 
 You can make bulleted or numbered lists easily in Markdown. Simply begin a line with an asterisk, hyphen, or plus sign. To make a sub-list, just indent the lines of the sublist by four spaces.
+
+### Markdown:
 
     * This is a list
 
@@ -133,6 +148,8 @@ You can make bulleted or numbered lists easily in Markdown. Simply begin a line 
       and as long as there is no blank line between them, Markdown knows to treat
       them as a single paragraph.
 
+### Formatted Output:
+
 -   This is a list
 
 -   This is the second item of the list.
@@ -147,7 +164,12 @@ You can make bulleted or numbered lists easily in Markdown. Simply begin a line 
 
 -   This is the main list again. Just as with other things, you can break a single list item into several lines, and as long as there is no blank line between them, Markdown knows to treat them as a single paragraph.
 
+Numbered Lists
+--------------
+
 To make numbered lists, start them with a number and a period:
+
+### Markdown
 
     1. This is a list
 
@@ -170,6 +192,8 @@ To make numbered lists, start them with a number and a period:
             i) this is a sub-sub list numbered with Roman numerals
 
     1. This is the main list again.
+
+### Formatted Output:
 
 1.  This is a list
 
@@ -224,7 +248,11 @@ Figures
 
 You can include image files in your RMarkdown document:
 
+### Markdown
+
     ![This is a tornado](images/tornado.jpg)
+
+### Formatted Output:
 
 ![This is a tornado](images/tornado.jpg)
 
@@ -237,7 +265,7 @@ If you want to add a hyperlink to some text in your document, then you would do 
 
     [Vanderbilt University](https://www.vanderbilt.edu)
 
-to get: [Vanderbilt University](https://www.vanderbilt.edu).
+to get this: [Vanderbilt University](https://www.vanderbilt.edu).
 
 Note the difference between the hyperlink specification and the image specification is whether there is an exclamation point before the square brackets.
 
@@ -311,7 +339,9 @@ source("scripts/format_md.R")
 source("scripts/layer_diagram.R")
 ```
 
-These scripts contain the code for a function, `format_md`, which formats numbers nicely for markdown documents, allowing you to control how many decimal places it shows, and optionally using scientific notation or inserting commas to separate thousands, millions, etc.
+### Useful Scripts for the Labs:
+
+These first script defines a function, `format_md`, which formats numbers nicely for markdown documents, allowing you to control how many significant digits it shows, and optionally using scientific notation or inserting commas to separate thousands, millions, etc.
 
 `format_md(sigma, digits = 1)` will produce 5.7×10<sup>-8</sup>
 
@@ -320,6 +350,8 @@ These scripts contain the code for a function, `format_md`, which formats number
 `format_md(pi * 1E6, digits = 3, scientific = TRUE)` will produce 3.142×10<sup>6</sup>
 
 `format_md(pi * 1E6, digits = 3, scientific = FALSE, comma = TRUE)` will produce 3,142,000
+
+### Script for Layer Diagrams
 
 The other script allows you to produce a layer diagram, similar to the ones in Chapter 3 of *Global Warming: Understanding the Forecast*.
 

@@ -2,6 +2,8 @@
 title: "Introduction to RMarkdown"
 author: "Jonathan Gilligan"
 date: "August 17, 2017"
+fontfamily: "newtxtext,newtxmath"
+fontsize: "12pt"
 output:
   html_document: default
   pdf_document: default
@@ -31,8 +33,9 @@ having to learn a technical formatting language, such as HTML. Markdown is
 fairly generic, so it is easy to translate a single Markdown document into
 many output formats, such as HTML for web pages,  PDF, and Microsoft Word documents.
 
-You can learn a lot about the details of Markdown at the RStudio web site <http://rmarkdown.rstudio.com>.
-RStudio has a handy cheat sheet for RMarkdown that you can see by opening the Help menu, going to "Cheatsheets" and
+You can learn a lot about the details of Markdown at the RStudio web site 
+<http://rmarkdown.rstudio.com>. RStudio has a handy cheat sheet for RMarkdown 
+that you can see by opening the Help menu, going to "Cheatsheets" and
 opening the Rmarkdown Cheat Sheet or the more comprehensive RMarkdown Reference.
 
 What makes RMarkdown different from ordinary Markdown is that it allows you to 
@@ -45,9 +48,11 @@ load the data, analyze it, and generate the final report. Then if your
 data changes and you need to update your report, you can do so by knitting the
 RMarkdown document with the updated data files.
 
-To turn an RMarkdown document into an HTML, PDF, or Microsoft Word document, you just click on the "Knit" button in RStudio. If you click on the word "Knit" on the button, RStudio will turn the RMarkdown 
-document into the default format (see below). To knit the document into a different output format,
-click on the arrow just to the right of the word "Knit," and select the output format you want.
+To turn an RMarkdown document into an HTML, PDF, or Microsoft Word document, you 
+just click on the "Knit" button in RStudio. If you click on the word "Knit" on the 
+button, RStudio will turn the RMarkdown document into the default format (see 
+below). To knit the document into a different output format, click on the arrow 
+just to the right of the word "Knit," and select the output format you want.
 
 # Document header
 
@@ -102,6 +107,8 @@ Some of the basic elements of Markdown are:
 Any block of one or more lines of text, with a blank line before and a blank line after
 is treated as a single paragraph.  To separate paragraphs, put a blank line between them:
 
+### Markdown:
+
 ```
 This is one paragraph.
 It stretches over several consecutive lines,
@@ -113,6 +120,8 @@ The blank line between the two
 blocks of text tells Markdown
 that they are separate paragraphs
 ```
+
+### Formatted Output:
 
 > This is one paragraph.
 It stretches over several consecutive lines,
@@ -130,6 +139,8 @@ Any line of text that begins with one or more hash symbols ("#") and is preceded
 a blank line is treated as a section header. Top-level section headers have a single
 hash, and subsections, subsubsections, etc. use two, three, etc. hashes.
 
+### Markdown:
+
 ```
 # This is a top-level section header
 
@@ -138,6 +149,12 @@ hash, and subsections, subsubsections, etc. use two, three, etc. hashes.
 ### This is a subsubsection
 
 # This is another section
+```
+
+### Formatted Output: 
+
+```
+
 ```
 
 > # This is a top-level section header
@@ -150,21 +167,32 @@ hash, and subsections, subsubsections, etc. use two, three, etc. hashes.
 
 ## Formatting text
 
-To make _italic text_ and **boldface text** you surround the text with underscores or asterisks. 
-A single underscore or asterisk means italic, two means boldface, and three means both italic and boldface:
+To make _italic text_ and **boldface text** you surround the text with underscores 
+or asterisks. A single underscore or asterisk means italic, two means boldface, 
+and three means both italic and boldface:
+
+### Markdown:
 
 ```
-This is _italic text_. This is *also italic text*. __This is boldface__ and **so is this**.
-***This is bold italic***. This is ~~strikethrough~~, perhaps to indicate an error.
+This is _italic text_. This is *also italic text*. __This is boldface__ and 
+**so is this**. ***This is bold italic***. This is ~~strikethrough~~, perhaps 
+to indicate an error.
 ```
 
-> This is _italic text_. This is *also italic*. __This is boldface__ and **so is this**.
-***This is bold italic***. This is ~~strikethrough,~~ perhaps to indicate an error.
+### Formatted Output:
+
+> This is _italic text_. This is *also italic text*. __This is boldface__ and 
+> **so is this**. ***This is bold italic***. This is ~~strikethrough~~, perhaps 
+> to indicate an error.
+
 
 ## Lists
 
-You can make bulleted or numbered lists easily in Markdown. Simply begin a line with an asterisk, hyphen, or plus sign.
+You can make bulleted or numbered lists easily in Markdown. Simply begin a line 
+with an asterisk, hyphen, or plus sign.
 To make a sub-list, just indent the lines of the sublist by four spaces.
+
+### Markdown:
 
 ```
 * This is a list
@@ -187,6 +215,8 @@ To make a sub-list, just indent the lines of the sublist by four spaces.
   and as long as there is no blank line between them, Markdown knows to treat
   them as a single paragraph.
 ```
+
+### Formatted Output:
 
 * This is a list
 
@@ -208,7 +238,11 @@ To make a sub-list, just indent the lines of the sublist by four spaces.
   and as long as there is no blank line between them, Markdown knows to treat
   them as a single paragraph.
 
+## Numbered Lists
+
 To make numbered lists, start them with a number and a period:
+
+### Markdown
 
 ```
 1. This is a list
@@ -235,6 +269,8 @@ To make numbered lists, start them with a number and a period:
 
 ```
 
+### Formatted Output:
+
 1.  This is a list
 
 1.  This is the second item of the list. Notice that I keep using the 
@@ -260,20 +296,22 @@ To make numbered lists, start them with a number and a period:
 
 ## Mathematical expressions
 
-For simple math, you can just type stuff in  RMarkdown: `1 + 2 * 3` comes out as 1 + 2 * 3. 
-If you want subscripts or superscripts, you can get those by using the `~` and `^` characters, respectively:
-`I~out~ = sigma T^4^` appears as I~out~ = sigma T^4^.
+For simple math, you can just type stuff in  RMarkdown: `1 + 2 * 3` comes out as 
+1 + 2 * 3.  If you want subscripts or superscripts, you can get those by using 
+the `~` and `^` characters, respectively: `I~out~ = sigma T^4^` appears as 
+I~out~ = sigma T^4^.
 
-If you want fancier formatting for mathematical expressions, RMarkdown has a way to do this.
+If you want fancier formatting for mathematical expressions, RMarkdown has a way 
+to do this.
 
 If you put an expression between dollar signs, RMarkdown interprets it differently 
 from regular RMarkdown, and uses a format called LaTeX that is used for typesetting
-sophisticated mathematics. I won't try to present all of LaTeX here, but will give some
-common examples:
+sophisticated mathematics. I won't try to present all of LaTeX here, but will give 
+some common examples:
 
 An expression between single dollar signs is interpreted as _in-line_ math that
-appears in the middle of a line of text. LaTeX uses special terms that begin with a 
-backslash `\` to indicate special mathematical formatting or operators.
+appears in the middle of a line of text. LaTeX uses special terms that begin with
+a backslash `\` to indicate special mathematical formatting or operators.
 For example `$a + b \times x$` appears
 as $a  + b \times x$. 
 
@@ -292,9 +330,9 @@ as $x = \sqrt{y \times z}$. You can do other roots like this:
 `$T = \sqrt[4]{I_{out} / \sigma}$` appears as $T = \sqrt[4]{I_{out} / \sigma}$.
 
 To get display math, which appears on its own line, you use double dollar signs. 
-This is useful when you want to write a mathematical expression that is much taller than a line of text.
-In display mode you can display fractions using `\frac{numerator expression}{denominator expression}`,
-as in this example:
+This is useful when you want to write a mathematical expression that is much taller 
+than a line of text. In display mode you can display fractions using 
+`\frac{numerator expression}{denominator expression}`, as in this example:
 `$$\varepsilon \sigma T^4 = \frac{(1 - \alpha)}{4} \times I_{solar}$$` appears as
 
 $$ \varepsilon \sigma T^4 = \frac{(1 - \alpha)}{4} \times I_{solar}$$
@@ -306,11 +344,12 @@ $$T_{bare rock} = \sqrt[4]{\frac{(1 - \alpha)}{4 \varepsilon \sigma} \times I_{s
 There is a lot more to the LaTeX notation that you can use in 
 RMarkdown, but what I have shown here is sufficient for everything you will 
 do in this class.
-You won't need to use this kind of mathematical notation very much, but it can be convenient,
-especially when you are working exercises on atmospheric layer models.
+You won't need to use this kind of mathematical notation very much, but it can 
+be convenient, especially when you are working exercises on atmospheric layer 
+models.
 
-If you find it too difficult to use LaTeX mathematical notation, I will accept either 
-hand-written supplements in which you write out the equations by hand, or
+If you find it too difficult to use LaTeX mathematical notation, I will accept 
+either hand-written supplements in which you write out the equations by hand, or
 a textual description in your document where you use words instead of mathematical
 symbols to explain what you are doing.
 
@@ -318,9 +357,13 @@ symbols to explain what you are doing.
 
 You can include image files in your RMarkdown document:
 
+### Markdown
+
 ```
 ![This is a tornado](images/tornado.jpg)
 ```
+
+### Formatted Output:
 
 ![This is a tornado](images/tornado.jpg)
 
@@ -338,7 +381,7 @@ do it like this:
 [Vanderbilt University](https://www.vanderbilt.edu)
 ``` 
 
-to get: [Vanderbilt University](https://www.vanderbilt.edu).
+to get this: [Vanderbilt University](https://www.vanderbilt.edu).
 
 Note the difference between the hyperlink specification and the image specification
 is whether there is an exclamation point before the square brackets.
@@ -369,8 +412,8 @@ in Excel and most programming languages. Addition and subtraction use the
 normal plus and minus signs. Multiplication uses an asterisk, division uses
 a slash ("/"), and powers (exponentiation) uses "^".
 
-R has a lot of mathematical functions you can use, such as `sqrt()`, `log()` (for the natural logarithm),
-`log10()` for the base-10 logarithm, and so forth.
+R has a lot of mathematical functions you can use, such as `sqrt()`, `log()` 
+(for the natural logarithm), `log10()` for the base-10 logarithm, and so forth.
 
 We can assign numbers to variables using the equals sign:
 ```{r stefan_boltzmann}
@@ -381,24 +424,30 @@ I_absorbed = I_solar * (1 - albedo)
 T = (I_absorbed / (4 * sigma))^0.25
 ```
 
-If the last line of a code block is something with a value (e.g., the name of a variable or a mathematical expression, as opposed to an assignment with an equals sign), 
-then R will show that value:
+If the last line of a code block is something with a value (e.g., the name of a 
+variable or a mathematical expression, as opposed to an assignment with an equals 
+sign), then R will show that value:
 
 ```{r surface_temperature}
 T
 ```
 
 
-We can also print the value of an R expression in the middle of a line of text using inline code: ` T = ` `r rinline("T")` will give T = `r T`.
+We can also print the value of an R expression in the middle of a line of text 
+using inline code: ` T = ` `r rinline("T")` will give T = `r T`.
 
-Inline code is very useful because it lets us ask R to automatically insert a number into the text. This means that every time we
-knit the document, that number is generated by R. If you write a report and then realize that there was a problem with the data
-or the analysis, you can just fix the problem and re-knit the report using the corrected data and analysis code. You don't need to 
-manually go through a separate document and edit the numbers to update them with the latest results from your analysis. RMarkdown
-will do that for you, if you used inline code to insert the numbers into your text.
+Inline code is very useful because it lets us ask R to automatically insert a 
+number into the text. This means that every time we knit the document, that number 
+is generated by R. If you write a report and then realize that there was a problem 
+with the data or the analysis, you can just fix the problem and re-knit the report 
+using the corrected data and analysis code. You don't need to manually go through 
+a separate document and edit the numbers to update them with the latest results 
+from your analysis. RMarkdown will do that for you, if you used inline code to 
+insert the numbers into your text.
 
-Thus, a bit of extra work at the beginning to set up the document and analysis using RMarkdown saves lots of time 
-later on by making it trivial to update the document.
+Thus, a bit of extra work at the beginning to set up the document and analysis 
+using RMarkdown saves lots of time later on by making it trivial to update the 
+document.
 
 Code blocks also allow us to include graphs in our document:
 
@@ -425,31 +474,42 @@ need to do things for our analysis that require more complicated R programming,
 and then I will write R scripts that contain this code so you don't need to write
 it yourself from scratch, but can just call functions that I provide.
 
-To load a script (a file containing R code), you use the R command `source("script_file.R"")`
+To load a script (a file containing R code), you use the R command 
+`source("script_file.R"")`
 
-For the exercises here, we will use two scripts, which are located in the "scripts" directory.
+For the exercises here, we will use two scripts, which are located in the 
+"scripts" directory.
 
-To load them into R so you can use them in your analysis, you would put the following
-code into your RMarkdown document:
+To load them into R so you can use them in your analysis, you would put the 
+following code into your RMarkdown document:
 
 ```{r load_scripts}
 source("scripts/format_md.R")
 source("scripts/layer_diagram.R")
 ```
 
-These scripts contain the code for a function, `format_md`, which formats numbers nicely for markdown documents, 
-allowing you to control how many decimal places it shows, and optionally using scientific notation or inserting commas to separate thousands, millions, etc.
+### Useful Scripts for the Labs:
+
+These first script defines a function, `format_md`, which formats 
+numbers nicely for markdown documents, allowing you to control how many 
+significant digits it shows, and optionally using scientific notation or 
+inserting commas to separate thousands, millions, etc.
 
 `format_md(sigma, digits = 1)` will produce `r format_md(sigma, digits = 1)`
 
-`format_md(sigma, digits = 1, scientific = FALSE)` will produce `r format_md(sigma, digits = 1, scientific = FALSE)`
+`format_md(sigma, digits = 1, scientific = FALSE)` will produce 
+`r format_md(sigma, digits = 1, scientific = FALSE)`
 
-`format_md(pi * 1E6, digits = 3, scientific = TRUE)` will produce `r format_md(pi * 1E6, digits = 3, scientific = TRUE)`
+`format_md(pi * 1E6, digits = 3, scientific = TRUE)` will produce 
+`r format_md(pi * 1E6, digits = 3, scientific = TRUE)`
 
-`format_md(pi * 1E6, digits = 3, scientific = FALSE, comma = TRUE)` will produce `r format_md(pi * 1E6, digits = 3, scientific = FALSE, comma = TRUE)`
+`format_md(pi * 1E6, digits = 3, scientific = FALSE, comma = TRUE)` will produce 
+`r format_md(pi * 1E6, digits = 3, scientific = FALSE, comma = TRUE)`
 
+### Script for Layer Diagrams
 
-The other script allows you to produce a layer diagram, similar to the ones in Chapter 3 of _Global Warming: Understanding the Forecast_.
+The other script allows you to produce a layer diagram, similar to the ones in 
+Chapter 3 of _Global Warming: Understanding the Forecast_.
 
 ```{r example_layer_diagram}
 make_layer_diagram(2)
