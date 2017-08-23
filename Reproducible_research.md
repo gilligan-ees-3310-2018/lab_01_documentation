@@ -98,7 +98,7 @@ Kinds of Reproducibility
 Reproducibility means different things in different scientific fields. One big distinction is between computational versus observational or empirical aspects of research.
 
 -   Computational reproducibility provides detailed information on exactly how computations (either calculations or simulations using computer models) were performed, and making it possible for others to exactly reproduce those computations or calculations. This includes providing source code for programs and scripts written by the researcher, together with detailed specifications of the software (including the specific versions used), and the hardware used (running the same software on different computer hardware can sometimes give different results). R has a function that will automatically report the computing hardware and software, so it will be trivial to add this to the end of all your laboratory reports.
--   Empirical reproducibilty provides detailed information about laboratory or field procedures that were used to acquire empirical data used in the analysis. In practice, this is often accomplished by providing the raw data together with details about how it was collected.
+-   Empirical reproducibility provides detailed information about laboratory or field procedures that were used to acquire empirical data used in the analysis. In practice, this is often accomplished by providing the raw data together with details about how it was collected.
 
 In this laboratory, we will focus entirely on *computational reproducibility*. We will not address all the details of computational reproducibility in this laboratory, but we will focus on three important aspects:
 

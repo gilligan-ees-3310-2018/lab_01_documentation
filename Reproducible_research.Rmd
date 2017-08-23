@@ -274,7 +274,7 @@ aspects of research.
     R has a function that will automatically report the computing hardware and 
     software, so it will be trivial to add this to the end of all your laboratory
     reports.
-* Empirical reproducibilty provides detailed information about laboratory or field
+* Empirical reproducibility provides detailed information about laboratory or field
     procedures that were used to acquire empirical data used in the analysis.
     In practice, this is often accomplished by providing the raw data together with
     details about how it was collected.
