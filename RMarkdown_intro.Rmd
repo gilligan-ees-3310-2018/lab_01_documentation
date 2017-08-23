@@ -323,7 +323,7 @@ indicate emissivity is a variation on the ordinary Greek epsilon, so we spell it
 LaTeX handles subscripts and superscripts differently from RMarkdown:
 You use `_{}` and `^{}` with whatever you want to appear in the subscript 
 or superscript inside the braces `{}`:
-`$I_{out} = \sigma T^{4{$` appears as $I_{out} = \sigma T^{4}$
+`$I_{out} = \sigma T^{4}$` appears as $I_{out} = \sigma T^{4}$
 
 You can include square root signs using `\sqrt`: `$x = \sqrt{y \times z}$` appears
 as $x = \sqrt{y \times z}$. You can do other roots like this: 
