@@ -5,9 +5,9 @@ date: "August 17, 2017"
 fontfamily: "newtxtext,newtxmath"
 fontsize: "12pt"
 output:
+  github_document: default
   html_document: default
   pdf_document: default
-  github_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -36,10 +36,10 @@ many output formats, such as HTML for web pages,  PDF, and Microsoft Word docume
 You can learn a lot about the details of Markdown at the RStudio web site 
 <http://rmarkdown.rstudio.com>. RStudio has a handy cheat sheet for RMarkdown 
 that you can see by opening the Help menu, going to "Cheatsheets" and
-opening the Rmarkdown Cheat Sheet or the more comprehensive RMarkdown Reference.
+opening the RMarkdown Cheat Sheet or the more comprehensive RMarkdown Reference.
 
 What makes RMarkdown different from ordinary Markdown is that it allows you to 
-combine text, formatted in Markdown, with instructinos to the R statistical 
+combine text, formatted in Markdown, with instructions to the R statistical 
 software to analyze data and produce graphs, tables, and other useful output.
 
 By integrating the data analysis with the text of a document, we can easily make our 
@@ -226,7 +226,7 @@ To make a sub-list, just indent the lines of the sublist by four spaces.
 
     * This is another item in the sub-list
     
-        A list item can have several paragraphs. Just ident the continuation 
+        A list item can have several paragraphs. Just indent the continuation 
         by four additional spaces and do not begin it with an asterisk.
         If you have multiple lines with no blank line separating them,
         Markdown treats them as a single paragraph.
@@ -371,7 +371,7 @@ You can include image files in your RMarkdown document:
 
 You can include links to documents on the web in two ways. The simplest
 is if you want the URL for the link to appear in your document you can just 
-surround the url with angle brackets:
+surround the URL with angle brackets:
 `<https://www.vanderbilt.edu>` appears as <https://www.vanderbilt.edu>. 
 
 If you want to add a hyperlink to some text in your document, then you would

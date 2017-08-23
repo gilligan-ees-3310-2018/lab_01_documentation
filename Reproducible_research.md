@@ -44,11 +44,11 @@ Nonetheless, even if only a few percent of major scientific research papers are 
 
 ### Reproducible Research
 
-Two important principles in sceince, which should prevent these errors, are that research should be *transparent* and *reproducible*: Research reports should describe the procedures clearly and in enough detail that other scientists know exactly what was done. And scientists who repeat the research procedures, as described in the reports, should find similar results, within the limits of experimental uncertainty.
+Two important principles in science, which should prevent these errors, are that research should be *transparent* and *reproducible*: Research reports should describe the procedures clearly and in enough detail that other scientists know exactly what was done. And scientists who repeat the research procedures, as described in the reports, should find similar results, within the limits of experimental uncertainty.
 
 However, as the anecdotes above, and hundreds of similar reports of problems in research reveal, too often even well-meaning scientists fall short of providing enough detail about their methods for other scientists to understand their work and catch errors, and it is often difficult to truly reproduce previously published research.
 
-To address these problems, the scientific commuinity is increasingly embracing the principles of what has come to be called **reproducible research**.
+To address these problems, the scientific community is increasingly embracing the principles of what has come to be called **reproducible research**.
 
 Federal funding agencies, scientific journals, and scientific societies now call for authors to reveal all the details of their experiments and analysis, and must share the data and computer codes they used to perform the analyses described in their publications.
 
@@ -61,11 +61,11 @@ What is Reproducible Research?
 
 *Reproducible research* seeks to make scientific research completely reproducible by documenting every decision a researcher made in the course of collecting and analyzing data. At the simplest level, this would mean that when a scientist submits a paper to a research journal, she would include all the data and a clear description of the analysis.
 
-However, a written description of the analysis process might inadvertantly omit crucial steps, or the researcher might describe what she thought she did, but might have made errors in her actual analysis.
+However, a written description of the analysis process might inadvertently omit crucial steps, or the researcher might describe what she thought she did, but might have made errors in her actual analysis.
 
 In the example of Reinhart and Rogoff's paper on debt and economic growth, the two economists described what they thought they had done, but they were unaware that their spreadsheet contained errors. For three years after they published the paper, the errors remained buried in their spreadsheets but other economists only knew the written descriptions of the analysis that appeared in their paper and could not examine the spreadsheet for themselves.
 
-Thus, reproducible research calls for researchers to share not only their data, but also any spreadsheets, computer programs, or scripts they used to perform the analysis. This will allow other researchers to catch errors where the actual analysis procedure does not match the desccription in the published report, just as Thomas Herndon was able to do when he obtained Reinhart and Rogoff's spreadsheets.
+Thus, reproducible research calls for researchers to share not only their data, but also any spreadsheets, computer programs, or scripts they used to perform the analysis. This will allow other researchers to catch errors where the actual analysis procedure does not match the description in the published report, just as Thomas Herndon was able to do when he obtained Reinhart and Rogoff's spreadsheets.
 
 Scripts versus Spreadsheets
 ---------------------------
@@ -102,7 +102,7 @@ Reproducibility means different things in different scientific fields. One big d
 
 In this laboratory, we will focus entirely on *computational reproducibility*. We will not address all the details of computational reproducibility in this laboratory, but we will focus on three important aspects:
 
--   **Literate computing and authoring:** Litrerate computing refers to mixing computer code with narrative description of what the code is doing. Stanford computer science professor Donald Knuth invented literate programming based on his experience with large software projects, where he found that if he wrote clear narrative descriptions of what his programming code was doing, he made fewer errors, and could find and correct those errors more quickly.
+-   **Literate computing and authoring:** Literate computing refers to mixing computer code with narrative description of what the code is doing. Stanford computer science professor Donald Knuth invented literate programming based on his experience with large software projects, where he found that if he wrote clear narrative descriptions of what his programming code was doing, he made fewer errors, and could find and correct those errors more quickly.
 
     In this laboratory, we will use RMarkdown and RStudio to apply literate computing and authoring in laboratory activities and writing reports.
 
@@ -133,7 +133,7 @@ All the software you will need is installed on the computers in our laboratory c
 
 -   RStudio is available in many different options. What you want is the Open Source version of RStudio Desktop, which you can download from <https://www.rstudio.com/products/rstudio/download/#download>. Be sure to install R before you install RStudio.
 
-    After you install RStudio, you will almost certainly want to install several optional packages for R that we will use extensively for the labs. From the "packages" window in RStudio, click on "Install" and install the following packages: "tidyverse", "knitr", "rmarkdown", "xts", "lme4", "ggalt", "GGAlly", "ggExtra", "ggmap", "ggspectra", "ggspatial", "ggspectra", "ggstance", "gtable", "hrbrthemes", and "pacman"
+    After you install RStudio, you will almost certainly want to install several optional packages for R that we will use extensively for the labs. From the "packages" window in RStudio, click on "Install" and install the following packages: "tidyverse", "knitr", "rmarkdown", "xts", "lme4", "ggalt", "GGAlly", "ggExtra", "ggspectra", "ggspectra", "ggstance", "gtable", "hrbrthemes", and "pacman"
 
 -   Git for revision control. You have three options:
 
@@ -171,7 +171,7 @@ On Linux, you should be able to install LaTeX using the package manager for your
 Walking the Walk
 ================
 
-Over the last five years I have become increasingly convinced that reproducible research methods are both more efficient and also lead to higher quality reseearch. In my own research, I use the methods and many of the tools that we will use in this laboratory.
+Over the last five years I have become increasingly convinced that reproducible research methods are both more efficient and also lead to higher quality research. In my own research, I use the methods and many of the tools that we will use in this laboratory.
 
 Further Reading
 ===============

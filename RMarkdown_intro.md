@@ -8,9 +8,9 @@ RMarkdown
 
 RMarkdown is a combination of two tools: Markdown is a simple way of writing plain text that can be formatted into fancy documents. Markdown originated as a tool for easily writing blog posts and comments that include formatting, such as section headings, italic and bold-faced text, and so forth without having to learn a technical formatting language, such as HTML. Markdown is fairly generic, so it is easy to translate a single Markdown document into many output formats, such as HTML for web pages, PDF, and Microsoft Word documents.
 
-You can learn a lot about the details of Markdown at the RStudio web site <http://rmarkdown.rstudio.com>. RStudio has a handy cheat sheet for RMarkdown that you can see by opening the Help menu, going to "Cheatsheets" and opening the Rmarkdown Cheat Sheet or the more comprehensive RMarkdown Reference.
+You can learn a lot about the details of Markdown at the RStudio web site <http://rmarkdown.rstudio.com>. RStudio has a handy cheat sheet for RMarkdown that you can see by opening the Help menu, going to "Cheatsheets" and opening the RMarkdown Cheat Sheet or the more comprehensive RMarkdown Reference.
 
-What makes RMarkdown different from ordinary Markdown is that it allows you to combine text, formatted in Markdown, with instructinos to the R statistical software to analyze data and produce graphs, tables, and other useful output.
+What makes RMarkdown different from ordinary Markdown is that it allows you to combine text, formatted in Markdown, with instructions to the R statistical software to analyze data and produce graphs, tables, and other useful output.
 
 By integrating the data analysis with the text of a document, we can easily make our research reproducible. The RMarkdown file contains all the instructions to load the data, analyze it, and generate the final report. Then if your data changes and you need to update your report, you can do so by knitting the RMarkdown document with the updated data files.
 
@@ -158,7 +158,7 @@ You can make bulleted or numbered lists easily in Markdown. Simply begin a line 
 
     -   This is another item in the sub-list
 
-        A list item can have several paragraphs. Just ident the continuation by four additional spaces and do not begin it with an asterisk. If you have multiple lines with no blank line separating them, Markdown treats them as a single paragraph.
+        A list item can have several paragraphs. Just indent the continuation by four additional spaces and do not begin it with an asterisk. If you have multiple lines with no blank line separating them, Markdown treats them as a single paragraph.
 
         Here is a third paragraph of continuation.
 
@@ -259,7 +259,7 @@ You can include image files in your RMarkdown document:
 Hyperlinks
 ----------
 
-You can include links to documents on the web in two ways. The simplest is if you want the URL for the link to appear in your document you can just surround the url with angle brackets: `<https://www.vanderbilt.edu>` appears as <https://www.vanderbilt.edu>.
+You can include links to documents on the web in two ways. The simplest is if you want the URL for the link to appear in your document you can just surround the URL with angle brackets: `<https://www.vanderbilt.edu>` appears as <https://www.vanderbilt.edu>.
 
 If you want to add a hyperlink to some text in your document, then you would do it like this:
 
