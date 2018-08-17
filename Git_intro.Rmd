@@ -1,12 +1,12 @@
 ---
 title: "Introduction to Git and Github Classroom"
 author: "Jonathan GIlligan"
-date: "August 19, 2017"
+date: "Reading for Lab August 27, 2018"
 fontfamily: "newtxtext,newtxmath"
 fontsize: "12pt"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
   github_document: default
 ---
 # Revision Control for Reproducible Research

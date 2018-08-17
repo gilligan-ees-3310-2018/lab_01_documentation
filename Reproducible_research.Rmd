@@ -1,16 +1,16 @@
 ---
 title: "Introduction to Reproducible Research"
 author: "Jonathan Gilligan"
-date: "August 19, 2017"
+date: "Reading for Lab August 27, 2018"
 bibliography: "Reproducible_research.bib"
 fontfamily: "newtxtext,newtxmath"
 fontsize: "12pt"
 output:
   github_document: default
-  html_document: default
   pdf_document:
     includes:
       in_header: "preamble.tex"
+  html_document: default
 ---
 # Why Do We Need Reproducible Research?
 
