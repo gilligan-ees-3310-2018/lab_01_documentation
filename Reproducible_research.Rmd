@@ -6,10 +6,10 @@ bibliography: "Reproducible_research.bib"
 fontfamily: "newtxtext,newtxmath"
 fontsize: "12pt"
 output:
-  github_document: default
   pdf_document:
     includes:
       in_header: "preamble.tex"
+  github_document: default
   html_document: default
 ---
 # Why Do We Need Reproducible Research?

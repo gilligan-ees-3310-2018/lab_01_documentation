@@ -5,9 +5,9 @@ date: "Reading for Lab August 27, 2018"
 fontfamily: "newtxtext,newtxmath"
 fontsize: "12pt"
 output:
-  github_document: default
-  html_document: default
   pdf_document: default
+  html_document: default
+  github_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -53,6 +53,11 @@ just click on the "Knit" button in RStudio. If you click on the word "Knit" on t
 button, RStudio will turn the RMarkdown document into the default format (see 
 below). To knit the document into a different output format, click on the arrow 
 just to the right of the word "Knit," and select the output format you want.
+
+I use RMarkdown to produce all of the documents I produce for the labs in this course.
+You can see my code at <https://github.com/gilligan-ees-3310-2018>.
+The code for all of the Lab #1 documentation is at 
+<https://github.com/gilligan-ees-3310-2018/lab_01_documentation>
 
 # Document header
 
