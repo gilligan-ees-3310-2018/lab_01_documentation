@@ -2,7 +2,7 @@
 title: "Introduction to Reproducible Research"
 author: "Jonathan Gilligan"
 date: "Reading for Lab August 27, 2018"
-bibliography: "Reproducible_research.bib"
+bibliography: "reproducible_research.bib"
 fontfamily: "newtxtext,newtxmath"
 fontsize: "12pt"
 output:
